@@ -16,16 +16,16 @@ export const ComponentB = () => {
         <>
             i am componentB
             <button onClick={() => {
-                dispatch(increment_g({how_many: input_number, marker: 'i incremented by'+input_number}))
+                dispatch(increment_g({ how_many: input_number, marker: 'i incremented by' + input_number }))
             }} >inc by 10  getStarted</button>
 
             <button onClick={() => {
                 dispatch(increment_t(10))
             }} >inc tutorial </button>
 
-<input value = {input_number}
-onChange={(event)=>{setInput_number(event.target.value)}}
-></input>
+            <input value={input_number}
+                onChange={(event) => { setInput_number(event.target.value) }}
+            ></input>
 
         </>
     </MyDiv>)
