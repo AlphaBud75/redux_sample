@@ -1,4 +1,0 @@
-initialState = {
-    username: String
-}
-
