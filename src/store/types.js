@@ -1,0 +1,4 @@
+initialState = {
+    username: String
+}
+
