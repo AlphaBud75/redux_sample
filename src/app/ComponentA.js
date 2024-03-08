@@ -8,16 +8,16 @@ export const ComponentA = () =>{
 
     const dispatch = useDispatch();
 
-    const username = useSelector(selectorUsername);
+    // const username = useSelector(selectorUsername);
 
     useEffect(()=>{
-        dispatch(updateUsernameValue('new username'));
+        // dispatch(updateUsernameValue('new username'));
     },[])
 
     return (<MyDiv>
         <>
         i am component A
-        {username}
+        {/* {username} */}
         </>
     </MyDiv>)
 
