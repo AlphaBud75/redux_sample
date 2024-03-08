@@ -3,24 +3,29 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { increment_t } from './tutorial/slice';
 import { increment_g } from './getStarted/slice';
+import { useState } from 'react';
 
 
 
 export const ComponentB = () => {
 
     const dispatch = useDispatch();
+    const [input_number, setInput_number] = useState(1)
 
     return (<MyDiv>
         <>
             i am componentB
+            <button onClick={() => {
+                dispatch(increment_g({how_many: input_number, marker: 'i incremented by'+input_number}))
+            }} >inc by 10  getStarted</button>
 
             <button onClick={() => {
-                dispatch(increment_t(null))
-            }} >inc tutorial</button>
+                dispatch(increment_t(10))
+            }} >inc tutorial </button>
 
-            <button onClick={() => {
-                dispatch(increment_g(null))
-            }} >inc getStarted</button>
+<input value = {input_number}
+onChange={(event)=>{setInput_number(event.target.value)}}
+></input>
 
         </>
     </MyDiv>)

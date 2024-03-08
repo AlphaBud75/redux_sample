@@ -6,8 +6,8 @@ export const getStartedSlice = createSlice({
     value: 1,
   },
   reducers: {
-    increment_g: (state) => {
-      state.value += 1
+    increment_g: (state, action) => {
+      state.value += Number(action.payload.how_many)
     },
     decrement: (state) => {
       state.value -= 1
