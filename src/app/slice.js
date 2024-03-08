@@ -1,28 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState: {
-    value: 0,
-  },
-  reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
-  },
-})
+import { combineSlices } from '@reduxjs/toolkit'
+import tutorialSlice from './tutorial/slice'
+import getStartedSlice from './getStarted/slice'
 
-// Action creators are generated for each case reducer function
-export const { 
-  increment, 
-  decrement, 
-  incrementByAmount 
-} = counterSlice.actions
+export const rootSlice = combineSlices({
 
-export default counterSlice.reducer
+  tutorial: tutorialSlice,
+  getStarted: getStartedSlice
+}
+)
+
+export default rootSlice.reducer
